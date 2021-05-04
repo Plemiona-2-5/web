@@ -1,34 +1,25 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import {units} from './unitsModule'
+import {materials} from './materialsModule'
+import {village} from './villageModule'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-    materials: {
-      wood: 0,
-      clay: 0,
-      iron: 0,
-      villagers: 0,
+    state: {
+        token: null,
     },
-    units: {
-      pikes: 0,
-      swords: 0,
-      axes: 0,
-      archers: 0,
-      trebuchets: 0,
-      horses: 0
+    mutations: {},
+    actions: {},
+    getters: {
+        token(state) {
+            return state.token
+        }
     },
-    village: {
-      x: 0,
-      y: 0,
-      points: 0
+    modules: {
+        units: units,
+        materials: materials,
+        village: village
     }
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
 })
