@@ -9,7 +9,7 @@ export default {
     name: "MiniMap",
     data: function () {
         return {
-            pixelSize: 8,
+            villageSize: 8,
             worldSize: {
                 x: 100,
                 y: 100
@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         drawVillages: function () {
-            
+
         },
     }
 }
