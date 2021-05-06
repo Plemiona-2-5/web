@@ -1,17 +1,20 @@
 <template>
     <div>
         <world-map></world-map>
-        <mini-map></mini-map>
+        <draggable>
+            <mini-map></mini-map>
+        </draggable>
     </div>
 </template>
 
 <script>
     import WorldMap from "./WorldMap";
     import MiniMap from "./MiniMap";
+    import Draggable from "../../../components/Draggable";
 
     export default {
         name: "MapCard",
-        components: {MiniMap, WorldMap}
+        components: {Draggable, MiniMap, WorldMap}
     }
 </script>
 
