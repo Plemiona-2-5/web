@@ -40,7 +40,7 @@ html {
 }
 
 #view {
-    background-color: #42b983;
+    background-color: rgba(244,200,63,0.42);
     border: 5px outset rgba(255, 211, 65, 0.75);
 }
 </style>
