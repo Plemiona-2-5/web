@@ -4,7 +4,11 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <el-row :gutter="24" justify="center" align="top">
+      <el-col :offset="6" :span="12">
+        <router-view/>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
