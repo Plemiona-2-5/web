@@ -70,13 +70,8 @@ export default {
             trigger: "blur",
           },
           {
-            type: "email",
-            message: "wrong format of the email",
-            trigger: "blur",
-          },
-          {
-            min: 2,
-            message: "Username length should be at least 3 characters",
+            min: 4,
+            message: "Username length should be at least 5 characters",
             trigger: "blur",
           },
         ],
@@ -87,8 +82,8 @@ export default {
             trigger: "blur",
           },
           {
-            min: 4,
-            message: "Email length should be at least 5 characters",
+            min: 2,
+            message: "Email length should be at least 3 characters",
             trigger: "blur"
           }
         ],
