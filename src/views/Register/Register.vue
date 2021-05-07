@@ -10,7 +10,15 @@
         @submit.native.prevent="register"
       >
         <el-form-item prop="username">
-          <el-input v-model="model.username" placeholder="Username"></el-input>
+          <el-input v-model="model.username" 
+          placeholder="Username"></el-input>
+        </el-form-item>
+
+        <el-form-item prop="email">
+          <el-input v-model="model.email" 
+          placeholder="Email"
+          type="email">
+          </el-input>
         </el-form-item>
 
         <el-form-item prop="password">
@@ -50,6 +58,7 @@ export default {
     return {
       model: {
         username: "",
+        email: "",
         password: "",
         confirm_password: "",
       },
@@ -61,10 +70,27 @@ export default {
             trigger: "blur",
           },
           {
-            min: 4,
-            message: "Username length should be at least 5 characters",
+            type: "email",
+            message: "wrong format of the email",
             trigger: "blur",
           },
+          {
+            min: 2,
+            message: "Username length should be at least 3 characters",
+            trigger: "blur",
+          },
+        ],
+        email: [
+          {
+            required: true,
+            message: "Email is required",
+            trigger: "blur",
+          },
+          {
+            min: 4,
+            message: "Email length should be at least 5 characters",
+            trigger: "blur"
+          }
         ],
         password: [
           { required: true, message: "Password is required", trigger: "blur" },
