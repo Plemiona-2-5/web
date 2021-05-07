@@ -14,18 +14,6 @@
 </template>
 
 <style>
-html {
-    background-color: rgba(255, 211, 65, 0.4)
-}
-
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-}
-
 #nav {
     padding: 30px;
 }
@@ -37,10 +25,5 @@ html {
 
 #nav a.router-link-exact-active {
     color: #42b983;
-}
-
-#view {
-    background-color: rgba(244,200,63,0.42);
-    border: 5px outset rgba(255, 211, 65, 0.75);
 }
 </style>
