@@ -1,0 +1,14 @@
+.el-input {
+	max-width: 200px;
+}
+.login-page {
+	max-width: fit-content;
+	width: 50%;
+	margin: 0 auto;
+}
+.el-form-item {
+	margin: 10px;
+}
+.el-button {
+	margin-top: 20px;
+}
