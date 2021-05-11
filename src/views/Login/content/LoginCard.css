@@ -1,10 +1,17 @@
 .el-input {
 	max-width: 200px;
+	border-style: groove;
+	border-width: 1px;
 }
 .login-page {
 	max-width: fit-content;
 	width: 50%;
 	margin: 0 auto;
+}
+.el-form {
+	border: wheat;
+	border-style: groove;
+	border-width: 1px;
 }
 .el-form-item {
 	margin: 10px;

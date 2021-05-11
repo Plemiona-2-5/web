@@ -1,6 +1,7 @@
 <template>
 	<div class="login">
-		<el-form ref="login-form" :model="form" :rules="rules" @submit.native.prevent>
+		<h3>Login</h3>
+		<el-form ref="login-form" :model="loginForm" :rules="rules" @submit.native.prevent>
 			<el-form-item prop="email" label="Email">
 				<el-input v-model="form.email" type="email"> </el-input>
 			</el-form-item>
@@ -18,7 +19,7 @@
 export default {
 	data() {
 		return {
-			form: {
+			loginForm: {
 				email: '',
 				password: ''
 			},
@@ -43,7 +44,7 @@ export default {
 	},
 
 	methods: {
-		LogIn() {
+		async LogIn() {
 			console.log('login');
 		}
 	}
