@@ -1,0 +1,21 @@
+#navbar {
+  padding: 10px 0 10px 0;
+  font-weight: bold;
+  background-color: $navbar-background;
+  border-bottom: $router-view-border;
+}
+
+#navbar a {
+  font-weight: bold;
+  color: $navbar-text-color;
+  text-decoration: none;
+}
+
+.button, button.router-link-exact-active, .button:focus {
+  background-color: rgba(0, 0, 0, 0.0);
+  border: $navbar-background;
+}
+
+.button:hover {
+  background-color: $navbar-background;
+}
