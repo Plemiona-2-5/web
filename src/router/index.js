@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Overview from "../views/village/Overview";
+import OverviewPage from "../views/village/OverviewPage";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/overview',
-    name: 'Overview',
-    component: Overview
+    name: 'OverviewPage',
+    component: OverviewPage
   },
 ]
 

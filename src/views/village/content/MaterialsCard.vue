@@ -1,12 +1,12 @@
 <template>
     <el-row>
-        
+
     </el-row>
 </template>
 
 <script>
     export default {
-        name: "Overview"
+        name: "MaterialsCard"
     }
 </script>
 
