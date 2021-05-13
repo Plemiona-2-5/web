@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/overview',
+    path: '/',
     name: 'OverviewPage',
     component: OverviewPage
   },

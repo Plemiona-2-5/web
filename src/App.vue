@@ -12,9 +12,6 @@
 import Navbar from "./components/Navbar";
 
 export default {
-    components: {Navbar},
-    created() {
-        this.$router.push("/overview")
-    }
+    components: {Navbar}
 }
 </script>
