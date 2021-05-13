@@ -11,7 +11,3 @@
         name: "VillageCard"
     }
 </script>
-
-<style scoped>
-
-</style>

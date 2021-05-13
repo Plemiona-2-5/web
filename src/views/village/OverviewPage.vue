@@ -27,7 +27,3 @@
         components: {MaterialsCard, ArmyCard, VillageCard}
     }
 </script>
-
-<style scoped>
-
-</style>
