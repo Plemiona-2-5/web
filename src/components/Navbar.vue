@@ -21,12 +21,12 @@
 </template>
 
 <script>
-    export default {
-        name: "Navbar",
-        computed: {
-            points() {
-                return this.$store.getters.points
-            }
-        }
+import {mapGetters} from 'vuex';
+
+export default {
+    name: "Navbar",
+    computed: {
+        ...mapGetters(["points"])
     }
+}
 </script>
