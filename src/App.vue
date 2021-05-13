@@ -1,10 +1,6 @@
 <template>
-    <div id="app">
-        <div id="nav">
-            <router-link to="/">Home</router-link>
-            |
-            <router-link to="/about">About</router-link>
-        </div>
+    <div>
+        <navbar></navbar>
         <el-row :gutter="24" justify="center" align="top">
             <el-col :offset="5" :span="14" id="view">
                 <router-view/>
@@ -12,18 +8,10 @@
         </el-row>
     </div>
 </template>
+<script>
+import Navbar from "./components/Navbar";
 
-<style>
-#nav {
-    padding: 30px;
+export default {
+    components: {Navbar}
 }
-
-#nav a {
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-    color: #42b983;
-}
-</style>
+</script>
