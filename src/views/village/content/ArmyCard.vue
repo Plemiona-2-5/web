@@ -4,7 +4,7 @@
                 <el-image :src="require('@/assets/image/units/pic.png')"
                           :fit="'scale-down'"
                           alt="Wood"
-                          class="material"
+                          class="army-image"
                 ></el-image>
                 {{infantry.pikes}}
             </el-col>
@@ -13,7 +13,7 @@
                 <el-image :src="require('@/assets/image/units/sword.png')"
                           :fit="'scale-down'"
                           alt="Wood"
-                          class="material"
+                          class="army-image"
                 ></el-image>
                 {{infantry.swords}}
             </el-col>
@@ -22,7 +22,7 @@
                 <el-image :src="require('@/assets/image/units/axe.png')"
                           :fit="'scale-down'"
                           alt="Wood"
-                          class="material"
+                          class="army-image"
                 ></el-image>
                 {{infantry.axes}}
             </el-col>
@@ -31,7 +31,7 @@
                 <el-image :src="require('@/assets/image/units/light.png')"
                           :fit="'scale-down'"
                           alt="Wood"
-                          class="material"
+                          class="army-image"
                 ></el-image>
                 {{cavalry.light}}
             </el-col>
@@ -40,7 +40,7 @@
                 <el-image :src="require('@/assets/image/units/heavy.png')"
                           :fit="'scale-down'"
                           alt="Wood"
-                          class="material"
+                          class="army-image"
                 ></el-image>
                 {{cavalry.heavy}}
             </el-col>

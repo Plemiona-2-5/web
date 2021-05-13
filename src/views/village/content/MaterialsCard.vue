@@ -6,7 +6,7 @@
                 <el-image :src="require('@/assets/image/materials/wood.png')"
                           :fit="'scale-down'"
                           alt="Wood"
-                          class="material"
+                          class="material-image"
                 ></el-image>
                 {{materials.wood}}
             </el-col>
@@ -15,7 +15,7 @@
                 <el-image :src="require('@/assets/image/materials/clay.png')"
                           :fit="'scale-down'"
                           alt="Clay"
-                          class="material"
+                          class="material-image"
                 ></el-image>
                 {{materials.clay}}
             </el-col>
@@ -24,7 +24,7 @@
                 <el-image :src="require('@/assets/image/materials/iron.png')"
                           :fit="'scale-down'"
                           alt="Iron"
-                          class="material"
+                          class="material-image"
                 ></el-image>
                 {{materials.iron}}
             </el-col>
@@ -33,7 +33,7 @@
                 <el-image :src="require('@/assets/image/materials/villagers.jpg')"
                           :fit="'scale-down'"
                           alt="Iron"
-                          class="material"
+                          class="material-image"
                 ></el-image>
                 {{materials.villagers}}
             </el-col>
