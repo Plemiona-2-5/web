@@ -2,40 +2,13 @@
     <el-container>
         <el-row>
 
-            <el-col :span="6">
-                <el-image :src="require('@/assets/image/materials/wood.png')"
+            <el-col :span="6" v-for="(value, material, index) in materials" :key="material">
+                <el-image :src="materialTypes[index].imageSrc"
                           :fit="'scale-down'"
-                          alt="Wood"
+                          :alt="material"
                           class="material-image"
                 ></el-image>
-                {{materials.wood}}
-            </el-col>
-
-            <el-col :span="6">
-                <el-image :src="require('@/assets/image/materials/clay.png')"
-                          :fit="'scale-down'"
-                          alt="Clay"
-                          class="material-image"
-                ></el-image>
-                {{materials.clay}}
-            </el-col>
-
-            <el-col :span="6">
-                <el-image :src="require('@/assets/image/materials/iron.png')"
-                          :fit="'scale-down'"
-                          alt="Iron"
-                          class="material-image"
-                ></el-image>
-                {{materials.iron}}
-            </el-col>
-
-            <el-col :span="6">
-                <el-image :src="require('@/assets/image/materials/villagers.jpg')"
-                          :fit="'scale-down'"
-                          alt="Iron"
-                          class="material-image"
-                ></el-image>
-                {{materials.villagers}}
+                {{value}}
             </el-col>
 
         </el-row>
@@ -44,9 +17,15 @@
 
 <script>
     import {mapGetters} from 'vuex';
+    import materialTypes from "./materials";
 
     export default {
         name: "MaterialsCard",
+        data: function () {
+            return {
+                materialTypes: materialTypes
+            }
+        },
         computed: {
             ...mapGetters([
                 "materials"
