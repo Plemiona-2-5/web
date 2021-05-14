@@ -1,7 +1,7 @@
 <template>
     <div id="navbar">
         <el-button type="danger" class="button">
-            <router-link to="/#">Overview</router-link>
+            <router-link to="/">Overview</router-link>
         </el-button>
 
         <el-button type="danger" class="button">
