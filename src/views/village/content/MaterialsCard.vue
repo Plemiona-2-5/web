@@ -2,13 +2,13 @@
     <el-container>
         <el-row>
 
-            <el-col :span="6" v-for="(value, material, index) in materials" :key="material">
+            <el-col :span="6" v-for="(amount, material, index) in materials" :key="material">
                 <el-image :src="materialTypes[index].imageSrc"
                           :fit="'scale-down'"
                           :alt="material"
                           class="material-image"
                 ></el-image>
-                {{value}}
+                {{amount}}
             </el-col>
 
         </el-row>
