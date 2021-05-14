@@ -1,57 +1,37 @@
 <template>
     <el-row :gutter="24">
-            <el-col :span="4">
-                <el-image :src="require('@/assets/image/units/pic.png')"
-                          :fit="'scale-down'"
-                          alt="Wood"
-                          class="army-image"
-                ></el-image>
-                {{infantry.pikes}}
-            </el-col>
+        <el-col :span="infantryTypes[index].span" v-for="(amount, unitName, index) in infantry" :key="unitName">
+            <el-image :src="infantryTypes[index].imageSrc"
+                      :fit="'scale-down'"
+                      :alt="unitName"
+                      class="army-image"
+            ></el-image>
+            {{amount}}
+        </el-col>
 
-            <el-col :span="5">
-                <el-image :src="require('@/assets/image/units/sword.png')"
-                          :fit="'scale-down'"
-                          alt="Wood"
-                          class="army-image"
-                ></el-image>
-                {{infantry.swords}}
-            </el-col>
-
-            <el-col :span="5">
-                <el-image :src="require('@/assets/image/units/axe.png')"
-                          :fit="'scale-down'"
-                          alt="Wood"
-                          class="army-image"
-                ></el-image>
-                {{infantry.axes}}
-            </el-col>
-
-            <el-col :span="5">
-                <el-image :src="require('@/assets/image/units/light.png')"
-                          :fit="'scale-down'"
-                          alt="Wood"
-                          class="army-image"
-                ></el-image>
-                {{cavalry.light}}
-            </el-col>
-
-            <el-col :span="5">
-                <el-image :src="require('@/assets/image/units/heavy.png')"
-                          :fit="'scale-down'"
-                          alt="Wood"
-                          class="army-image"
-                ></el-image>
-                {{cavalry.heavy}}
-            </el-col>
+        <el-col :span="cavalryTypes[index].span" v-for="(amount, unitName, index) in cavalry" :key="unitName">
+            <el-image :src="cavalryTypes[index].imageSrc"
+                      :fit="'scale-down'"
+                      :alt="unitName"
+                      class="army-image"
+            ></el-image>
+            {{amount}}
+        </el-col>
     </el-row>
 </template>
 
 <script>
     import {mapGetters} from 'vuex';
+    import unitTypes from "./units";
 
     export default {
         name: "ArmyCard",
+        data: function () {
+            return {
+                infantryTypes: unitTypes.infantry,
+                cavalryTypes: unitTypes.cavalry
+            }
+        },
         computed: {
             ...mapGetters([
                 "infantry",
