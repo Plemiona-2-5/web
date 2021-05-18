@@ -50,12 +50,6 @@
                     minZoom: -3
                 });
                 var bounds = [[0, 0], [1000, 1000]];
-                var ScaleOps = {
-                    maxWidth: 200,
-                    metric: false,
-                    imperial: false
-                }
-                L.control.scale(ScaleOps).addTo(this.map);
                 L.imageOverlay(require('@/assets/image/map/map.png'), bounds).addTo(this.map);
                 this.map.fitBounds(bounds);
                 this.map.setView(L.latLng(this.coords.x + 100, this.coords.y + 100))
