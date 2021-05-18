@@ -5,7 +5,7 @@
         </el-button>
 
         <el-button type="danger" class="button">
-            <router-link to="/#">Map</router-link>
+            <router-link to="/map">Map</router-link>
         </el-button>
 
         {{points}} Points
