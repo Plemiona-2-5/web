@@ -47,6 +47,10 @@
 </template>
 
 <script>
+import { email} from './Rules.js'
+import {username} from './Rules.js'
+import {password} from './Rules.js'
+import {confirm_password} from './Rules.js'
 export default {
   name: "register",
   data() {
@@ -58,46 +62,10 @@ export default {
         confirm_password: "",
       },
       rules: {
-        username: [
-          {
-            required: true,
-            message: "Username is required",
-            trigger: "blur",
-          },
-          {
-            min: 4,
-            message: "Username length should be at least 5 characters",
-            trigger: "blur",
-          },
-        ],
-        email: [
-          {
-            required: true,
-            message: "Email is required",
-            trigger: "blur",
-          },
-          {
-            min: 2,
-            message: "Email length should be at least 3 characters",
-            trigger: "blur",
-          },
-        ],
-        password: [
-          { required: true, message: "Password is required", trigger: "blur" },
-          {
-            min: 5,
-            message: "Password length should be at least 5 characters",
-            trigger: "blur",
-          },
-        ],
-        confirm_password: [
-          { required: true, message: "Password is required", trigger: "blur" },
-          {
-            min: 5,
-            message: "Password length should be at least 5 characters",
-            trigger: "blur",
-          },
-        ],
+        username,
+        email,
+        password,
+        confirm_password
       },
     };
   },
