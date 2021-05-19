@@ -1,0 +1,15 @@
+html {
+  background-color: $primary-background-color;
+  font-family: $font-stack;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+}
+
+#view {
+  background-color: $router-view-background-color;
+  border: $router-view-border;
+  color: $text-color;
+}
