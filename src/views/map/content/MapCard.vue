@@ -7,11 +7,11 @@
         <el-row :gutter="12" justify="end">
 
             <el-col :span="4">
-                <el-input type="number" v-model="xMapViewCord" :placeholder="xMapViewCord"></el-input>
+                <el-input type="number" v-model="xMapViewCoord" :placeholder="xMapViewCoord"></el-input>
             </el-col>
 
             <el-col :span="4">
-                <el-input type="number" v-model="yMapViewCord" :placeholder="yMapViewCord"></el-input>
+                <el-input type="number" v-model="yMapViewCoord" :placeholder="yMapViewCoord"></el-input>
             </el-col>
 
             <el-col :span="4">
@@ -40,8 +40,8 @@
                     iconUrl: require('@/assets/image/map/village.png'),
                     iconSize: [40, 40]
                 }),
-                xMapViewCord: null,
-                yMapViewCord: null
+                xMapViewCoord: null,
+                yMapViewCoord: null
             }
         },
         mounted() {
@@ -67,7 +67,7 @@
                 }).addTo(this.map);
             },
             center: function () {
-                this.map.setView(L.latLng(this.xMapViewCord, this.yMapViewCord))
+                this.map.setView(L.latLng(this.xMapViewCoord, this.yMapViewCoord))
             },
             centerOnPlayer: function () {
                 this.map.setView(L.latLng(this.coords.x, this.coords.y))
