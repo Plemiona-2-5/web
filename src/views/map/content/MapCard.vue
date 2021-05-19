@@ -18,6 +18,10 @@
                 <el-button @click="center">Go to</el-button>
             </el-col>
 
+            <el-col :span="4">
+                <el-button @click="centerOnPlayer">Center on me</el-button>
+            </el-col>
+
         </el-row>
     </div>
 </template>
@@ -31,6 +35,7 @@
         data: function () {
             return {
                 map: null,
+                bounds: [[0, 0], [1000, 1000]],
                 village: L.icon({
                     iconUrl: require('@/assets/image/map/village.png'),
                     iconSize: [40, 40]
@@ -47,18 +52,25 @@
             mapInit: function () {
                 this.map = L.map('map', {
                     crs: L.CRS.Simple,
-                    minZoom: -3
+                    minZoom: -2,
+                    maxZoom: 4,
+                    contextmenu: true,
+                    contextmenuWidth: 140
                 });
-                var bounds = [[0, 0], [1000, 1000]];
-                L.imageOverlay(require('@/assets/image/map/map.png'), bounds).addTo(this.map);
-                this.map.fitBounds(bounds);
-                this.map.setView(L.latLng(this.coords.x + 100, this.coords.y + 100))
+                L.imageOverlay(require('@/assets/image/map/map.png'), this.bounds).addTo(this.map);
+                this.map.fitBounds(this.bounds);
+                this.map.setView(L.latLng(this.coords.x, this.coords.y))
             },
             drawVillages: function () {
-                L.marker([this.coords.x + 100, this.coords.y + 100], {icon: this.village}).addTo(this.map);
+                L.marker([this.coords.x, this.coords.y], {
+                    icon: this.village,
+                }).addTo(this.map);
             },
             center: function () {
                 this.map.setView(L.latLng(this.xMapViewCord, this.yMapViewCord))
+            },
+            centerOnPlayer: function () {
+                this.map.setView(L.latLng(this.coords.x, this.coords.y))
             }
         },
         computed: {
@@ -72,5 +84,11 @@
 <style scoped>
     #map {
         height: 600px;
+    }
+
+    #context-menu {
+        position: relative;
+        top: 500px;
+
     }
 </style>
