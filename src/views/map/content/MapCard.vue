@@ -32,7 +32,7 @@
 
     export default {
         name: "MapCard",
-        data: function () {
+        data() {
             return {
                 map: null,
                 bounds: [[0, 0], [1000, 1000]],
@@ -49,7 +49,7 @@
             this.drawVillages()
         },
         methods: {
-            mapInit: function () {
+            mapInit () {
                 this.map = L.map('map', {
                     crs: L.CRS.Simple,
                     minZoom: -2,
@@ -61,15 +61,15 @@
                 this.map.fitBounds(this.bounds);
                 this.map.setView(L.latLng(this.coords.x, this.coords.y))
             },
-            drawVillages: function () {
+            drawVillages () {
                 L.marker([this.coords.x, this.coords.y], {
                     icon: this.village,
                 }).addTo(this.map);
             },
-            center: function () {
+            center () {
                 this.map.setView(L.latLng(this.xMapViewCoord, this.yMapViewCoord))
             },
-            centerOnPlayer: function () {
+            centerOnPlayer () {
                 this.map.setView(L.latLng(this.coords.x, this.coords.y))
             }
         },
@@ -84,11 +84,5 @@
 <style scoped>
     #map {
         height: 600px;
-    }
-
-    #context-menu {
-        position: relative;
-        top: 500px;
-
     }
 </style>
