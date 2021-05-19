@@ -3,25 +3,19 @@
         <el-row>
             <div id="map"></div>
         </el-row>
-
         <el-row :gutter="12" justify="end">
-
             <el-col :span="4">
                 <el-input type="number" v-model="xMapViewCoord" :placeholder="xMapViewCoord"></el-input>
             </el-col>
-
             <el-col :span="4">
                 <el-input type="number" v-model="yMapViewCoord" :placeholder="yMapViewCoord"></el-input>
             </el-col>
-
             <el-col :span="4">
                 <el-button @click="center">Go to</el-button>
             </el-col>
-
             <el-col :span="4">
                 <el-button @click="centerOnPlayer">Center on me</el-button>
             </el-col>
-
         </el-row>
     </div>
 </template>
@@ -49,7 +43,7 @@
             this.drawVillages()
         },
         methods: {
-            mapInit () {
+            mapInit() {
                 this.map = L.map('map', {
                     crs: L.CRS.Simple,
                     minZoom: -2,
@@ -61,15 +55,15 @@
                 this.map.fitBounds(this.bounds);
                 this.map.setView(L.latLng(this.coords.x, this.coords.y))
             },
-            drawVillages () {
+            drawVillages() {
                 L.marker([this.coords.x, this.coords.y], {
                     icon: this.village,
                 }).addTo(this.map);
             },
-            center () {
+            center() {
                 this.map.setView(L.latLng(this.xMapViewCoord, this.yMapViewCoord))
             },
-            centerOnPlayer () {
+            centerOnPlayer() {
                 this.map.setView(L.latLng(this.coords.x, this.coords.y))
             }
         },
