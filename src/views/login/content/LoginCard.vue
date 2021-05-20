@@ -2,7 +2,7 @@
   <el-form
     :model="loginForm"
     :rules="rules"
-    ref="LoginCard"
+    ref="LoginForm"
     label-width="120px"
   >
     <el-form-item label="Email" prop="email">
@@ -12,7 +12,7 @@
       <el-input v-model="loginForm.password"> </el-input>
     </el-form-item>
     <el-form-item>
-      <el-button id="loginButton" type="primary" @click="Login">
+      <el-button id="loginButton" type="primary" @click="Login()">
         Login
       </el-button>
     </el-form-item>
@@ -20,8 +20,7 @@
 </template>
 
 <script>
-import { email } from "./validationRules.js";
-import { password } from "./validationRules.js";
+import { email, password } from "./validationRules.js";
 
 export default {
   data() {
@@ -38,7 +37,14 @@ export default {
   },
   methods: {
     Login() {
-      console.log("login");
+      this.$refs.LoginForm.validate((valid) => {
+        if (valid) {
+          alert("submit");
+        } else {
+          console.log("error");
+          return false;
+        }
+      });
     },
   },
 };
