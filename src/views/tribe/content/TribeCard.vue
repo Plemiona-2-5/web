@@ -19,6 +19,11 @@
 
     export default {
         name: "TribeCard",
+        created() {
+            if (this.playerTribe.name === "") {
+                this.$router.push("/tribe-browser")
+            }
+        },
         computed: {
             ...mapGetters([
                 "playerTribe"
