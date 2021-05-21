@@ -15,7 +15,7 @@
         </el-button>
 
         <el-button type="danger" class="button">
-            <router-link to="/#">Tribe</router-link>
+            <router-link to="/tribe">Tribe</router-link>
         </el-button>
     </div>
 </template>
