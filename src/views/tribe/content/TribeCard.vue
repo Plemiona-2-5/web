@@ -11,6 +11,9 @@
                 </el-col>
             </el-row>
         </el-col>
+        <el-col>
+            <el-button type="danger">Leave Tribe</el-button>
+        </el-col>
     </el-row>
 </template>
 
