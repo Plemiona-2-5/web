@@ -7,7 +7,8 @@ import EmailVerification from "../views/emailVerification/EmailVerification"
 
 Vue.use(VueRouter);
 
-const routes = [{
+const routes = [
+    {
         path: "/",
         name: "OverviewPage",
         component: OverviewPage,
