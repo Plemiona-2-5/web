@@ -1,13 +1,30 @@
 <template>
-    <el-row :gutter="24">
-        <el-col :span="24">
+    <div id="village-background">
+        <el-row v-for="row in buildingsRows" :key="row">
+            <el-col v-for="building in row" :key="building.name" :span="building.span" :offset="building.offset">
+                <el-row>
+                    <el-col>
+                        <span id="building-label">{{building.name}}</span>
+                    </el-col>
+                    <el-col>
+                        <el-image :src="building.imageSrc" :alt="building.name"></el-image>
+                    </el-col>
+                </el-row>
 
-        </el-col>
-    </el-row>
+            </el-col>
+        </el-row>
+    </div>
 </template>
 
 <script>
+    import buildingsRows from "./buildings";
+
     export default {
-        name: "VillageCard"
+        name: "VillageCard",
+        data() {
+            return {
+                buildingsRows: buildingsRows
+            }
+        }
     }
 </script>
