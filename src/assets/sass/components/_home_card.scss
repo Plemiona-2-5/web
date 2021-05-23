@@ -1,0 +1,52 @@
+$color-alpha: #b78846;
+$border: 3px solid rgba(241, 83, 83, 0.733);
+
+.main {
+	position: relative;
+}
+
+.header {
+	border: $border;
+}
+
+#logo {
+	width: 150px;
+	height: 150px;
+}
+
+.content {
+	width: 100%;
+	overflow: auto;
+	display: flex;
+	position: relative;
+}
+
+.left-content {
+	width: 50%;
+	text-align: left;
+	float: left;
+}
+
+.register {
+	border: $button-outline;
+	width: 95%;
+	background-color: rgba(255, 2, 2, 0.733);
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+}
+
+.right-content {
+	text-align: center;
+	width: 50%;
+	float: right;
+}
+
+.login {
+	border: $button-outline;
+	width: 95%;
+	margin-top: 52px;
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+}
