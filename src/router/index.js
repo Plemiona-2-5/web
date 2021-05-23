@@ -7,7 +7,8 @@ import RegisterPage from "../views/Register/Register"
 
 Vue.use(VueRouter);
 
-const routes = [{
+const routes = [
+    {
         path: "/",
         name: "OverviewPage",
         component: OverviewPage,
