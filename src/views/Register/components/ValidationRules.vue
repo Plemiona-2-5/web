@@ -6,7 +6,7 @@
       :model="model"
       :rules="rules"
       ref="form"
-      @submit.native.prevent="register"
+      @submit.native.prevent="Register"
     >
       <el-form-item prop="username">
         <el-input v-model="model.username" placeholder="Username"></el-input>
