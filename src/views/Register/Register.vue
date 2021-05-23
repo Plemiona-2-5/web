@@ -1,14 +1,14 @@
 <template>
   <div class="register">
-    <register></register>
+    <Register></Register>
   </div>
 </template>
 
 <script>
-import register from './components/ValidationRules.vue';
+import Register from './components/ValidationRules.vue';
 
 export default{
-  components:{register}
+  components:{Register}
 }
 </script>
 

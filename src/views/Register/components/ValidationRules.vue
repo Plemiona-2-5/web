@@ -25,9 +25,9 @@
         ></el-input>
       </el-form-item>
 
-      <el-form-item prop="confirm_password">
+      <el-form-item prop="confirmPassword">
         <el-input
-          v-model="model.confirm_password"
+          v-model="model.confirmPassword"
           placeholder="Confirm Password"
           type="password"
         ></el-input>
@@ -47,25 +47,22 @@
 </template>
 
 <script>
-import { email} from './Rules.js'
-import {username} from './Rules.js'
-import {password} from './Rules.js'
-import {confirm_password} from './Rules.js'
+import { email, username, password, confirmPassword} from './Rules.js'
 export default {
-  name: "register",
+  name: "Register",
   data() {
     return {
       model: {
         username: "",
         email: "",
         password: "",
-        confirm_password: "",
+        confirmPassword: "",
       },
       rules: {
         username,
         email,
         password,
-        confirm_password
+        confirmPassword
       },
     };
   },
