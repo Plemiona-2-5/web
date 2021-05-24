@@ -37,10 +37,10 @@ const routes = [
     component: TribeBrowser
   },
   {
-		path: '/home',
-		name: 'HomePage',
-		component: HomePage
-	}                           
+    path: '/home',
+    name: 'HomePage',
+    component: HomePage
+  }                           
 ];
 
 const router = new VueRouter({
