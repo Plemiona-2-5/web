@@ -4,14 +4,12 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import VueSignalR from '@latelier/vue-signalr'
 import globalStyles from "./plugins/globalStyles";
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 import axiosConfig from "./axiosConfig"
 
 Vue.config.productionTip = false
-Vue.use(VueSignalR, 'https://localhost:44305')
 Vue.use(ElementUI);
 Vue.use(globalStyles);
 Vue.use(axiosConfig)
