@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@latelier/vue-signalr": "^2.0.4",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.1",
     "leaflet": "^1.7.1",
