@@ -9,7 +9,10 @@ axios.interceptors.response.use(
         if (!error.response) {
             router.push({name: "LoginPage"})
         }
-        if (error.response.status === 404 || error.response.status === 401 || error.response.status === 403) {
+        else if (error.response.status === 404) {
+            router.push({name: "OverviewPage"})
+        }
+        else if (error.response.status === 401 || error.response.status === 403) {
             router.push({name: "LoginPage"})
         }
     }
@@ -23,7 +26,7 @@ axios.interceptors.request.use(
         }
         return request
     },
-    (error) => Promise.reject(error)
+    error => Promise.reject(error)
 )
 
 
