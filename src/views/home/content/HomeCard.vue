@@ -9,7 +9,7 @@
 				</div>
 			</el-header>
 			<el-main>
-				<div class="logo" @click="$router.push('overview')">
+				<div class="logo" @click="simulateLogin">
 					<el-image id="logo" :src="image"> </el-image>
 				</div>
 				<div class="content">
@@ -36,12 +36,24 @@
 </template>
 
 <script>
-const image = require('@/assets/image/home/logo.png');
+const image = require("@/assets/image/home/logo.png");
 export default {
 	data() {
 		return {
 			image
-		};
+		}
+	},
+	created() {
+		this.simulateLogout()
+	},
+	methods: {
+		simulateLogin() {
+			this.$store.commit("loginUser")
+			this.$router.push("overview")
+		},
+		simulateLogout() {
+			this.$store.commit("logoutUser")
+		}
 	}
 };
 </script>

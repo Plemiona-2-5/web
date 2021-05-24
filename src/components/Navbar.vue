@@ -1,7 +1,7 @@
 <template>
-    <div id="navbar" v-if="true">
+    <div id="navbar" v-if="isLogged">
         <el-button type="danger" class="button">
-            <router-link to="/">Overview</router-link>
+            <router-link to="/overview">Overview</router-link>
         </el-button>
 
         <el-button type="danger" class="button">
@@ -26,7 +26,7 @@ import {mapGetters} from 'vuex';
 export default {
     name: "Navbar",
     computed: {
-        ...mapGetters(["points"])
+        ...mapGetters(["points", "isLogged"])
     }
 }
 </script>
