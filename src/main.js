@@ -10,7 +10,7 @@ import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 Vue.config.productionTip = false
-Vue.use(VueSignalR, 'https://localhost:8080/')
+Vue.use(VueSignalR, 'https://localhost:44305')
 Vue.use(ElementUI);
 Vue.use(globalStyles);
 

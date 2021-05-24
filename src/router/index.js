@@ -2,6 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import OverviewPage from "../views/village/OverviewPage";
 import MapPage from "../views/map/MapPage";
+import TribePage from "../views/tribe/TribePage";
+import TribeBrowser from "../views/tribe/content/TribeBrowser";
 import LoginPage from "../views/login/LoginPage";
 
 Vue.use(VueRouter);
@@ -22,6 +24,16 @@ const routes = [
     name: "LoginPage",
     component: LoginPage,
   },
+  {
+    path: '/tribe',
+    name: 'TribePage',
+    component: TribePage
+    },
+    {
+    path: '/tribe-browser',
+    name: 'TribeBrowser',
+    component: TribeBrowser
+    },
 ];
 
 const router = new VueRouter({
