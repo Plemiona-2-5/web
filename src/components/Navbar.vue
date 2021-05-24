@@ -1,5 +1,5 @@
 <template>
-    <div id="navbar">
+    <div id="navbar" v-if="true">
         <el-button type="danger" class="button">
             <router-link to="/">Overview</router-link>
         </el-button>

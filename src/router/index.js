@@ -12,7 +12,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/overview",
     name: "OverviewPage",
     component: OverviewPage,
   },
@@ -37,7 +37,7 @@ const routes = [
     component: TribeBrowser
   },
   {
-    path: '/home',
+    path: '/',
     name: 'HomePage',
     component: HomePage
   }                           

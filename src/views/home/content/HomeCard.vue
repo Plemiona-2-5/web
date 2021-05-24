@@ -9,7 +9,7 @@
 				</div>
 			</el-header>
 			<el-main>
-				<div class="logo">
+				<div class="logo" @click="$router.push('overview')">
 					<el-image id="logo" :src="image"> </el-image>
 				</div>
 				<div class="content">
