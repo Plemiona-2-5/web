@@ -1,6 +1,6 @@
 <template>
     <div id="village-background">
-        <el-row v-for="row in buildingsRows" :key="row">
+        <el-row v-for="(row, rowName) in buildingsRows" :key="rowName">
             <el-col v-for="building in row" :key="building.name" :span="building.span" :offset="building.offset">
                 <el-row>
                     <el-col>

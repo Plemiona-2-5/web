@@ -1,0 +1,52 @@
+.register {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-button {
+  width: 100%;
+  margin-top: 40px;
+}
+.register-form {
+  width: 290px;
+}
+
+$darkorange: rgb(197, 105, 0);
+
+.el-button--primary {
+  background: $darkorange;
+  border-color: $darkorange;
+
+  &:hover,
+  &.active,
+  &:focus {
+    background: lighten($darkorange, 7);
+    border-color: lighten($darkorange, 7);
+  }
+}
+.register .el-input__inner:hover {
+  border-color: $darkorange;
+}
+
+.register .el-card {
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+
+a {
+  color: $darkorange;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus {
+    color: lighten($darkorange, 7);
+  }
+}
+.register .el-card {
+  background-color: wheat;
+  width: 340px;
+  display: flex;
+  justify-content: center;
+}
