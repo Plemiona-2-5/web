@@ -5,8 +5,8 @@ import MapPage from "../views/map/MapPage";
 import TribePage from "../views/tribe/TribePage";
 import TribeBrowser from "../views/tribe/content/TribeBrowser";
 import LoginPage from "../views/login/LoginPage";
+import RegisterPage from "../views/Register/Register"
 import HomePage from '../views/home/HomePage';
-
 
 Vue.use(VueRouter);
 
@@ -40,11 +40,16 @@ const routes = [
     path: '/home',
     name: 'HomePage',
     component: HomePage
-  }                           
+  },                    
+  {
+    path: '/register',
+    name: 'Register',
+    component: RegisterPage,
+  },
 ];
 
 const router = new VueRouter({
-  routes,
+    routes,
 });
 
 export default router;
