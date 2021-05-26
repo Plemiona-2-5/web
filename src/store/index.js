@@ -4,6 +4,7 @@ import {units} from './unitsModule'
 import {materials} from './materialsModule'
 import {village} from './villageModule'
 import {playerTribe} from "./tribeModule";
+import router from "../router";
 
 Vue.use(Vuex)
 
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     mutations: {
         loginUser (state) {
             state.isLogged = true
+            router.push("overview")
         },
         logoutUser (state) {
             state.isLogged = false
