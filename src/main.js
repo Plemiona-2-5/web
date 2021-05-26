@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import App from './App.vue'
 import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
@@ -8,6 +7,7 @@ import globalStyles from "./plugins/globalStyles";
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 import axiosConfig from "./axiosConfig"
+import App from "./App";
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
