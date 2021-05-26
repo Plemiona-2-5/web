@@ -2,20 +2,22 @@ import router from "../router";
 
 export const user = {
     state: () => ({
-        isLogged: false,
+        isPlaying: false,
     }),
     mutations: {
-        loginUser (state) {
-            state.isLogged = true
-            router.push("overview")
-        },
-        logoutUser (state) {
-            state.isLogged = false
+        setIsUserPlaying(state, isPlaying) {
+            state.isPlaying = isPlaying
+        }
+    },
+    actions: {
+        setIsUserPlaying(context, isPlaying) {
+            context.commit("setIsUserPlaying", isPlaying)
+            if (isPlaying === "true") router.push("overview")
         }
     },
     getters: {
-        isLogged(state) {
-            return state.isLogged
+        isPlaying(state) {
+            return state.isPlaying
         }
     }
 }

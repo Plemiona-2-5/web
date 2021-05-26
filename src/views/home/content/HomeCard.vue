@@ -9,7 +9,7 @@
                 </div>
             </el-header>
             <el-main>
-                <div class="logo" @click="loginUser">
+                <div class="logo" @click="setIsUserPlaying('true')">
                     <el-image id="logo" :src="image"></el-image>
                 </div>
                 <div class="content">
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-    import {mapMutations} from "vuex";
+    import {mapActions} from "vuex";
 
     const image = require("@/assets/image/home/logo.png");
     export default {
@@ -46,10 +46,10 @@
             }
         },
         created() {
-            this.logoutUser()
+            this.setIsUserPlaying(false)
         },
         methods: {
-            ...mapMutations(["loginUser", "logoutUser"]),
+            ...mapActions(["setIsUserPlaying"]),
         },
     };
 </script>
