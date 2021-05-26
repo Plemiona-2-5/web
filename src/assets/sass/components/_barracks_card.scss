@@ -1,0 +1,19 @@
+.centre {
+	display: flex;
+	justify-content: center;
+}
+.unit {
+	display: flex;
+}
+.unit h3 {
+	margin: 5px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+.el-image {
+	height: 30px;
+	margin-right: 10px;
+}
+.unit .el-input-number {
+	justify-content: flex-end;
+}
