@@ -17,6 +17,10 @@
         <el-button type="danger" class="button">
             <router-link to="/tribe">Tribe</router-link>
         </el-button>
+
+        <el-button type="danger" class="button" id="align-right">
+            <router-link to="/">Logout</router-link>
+        </el-button>
     </div>
 </template>
 
