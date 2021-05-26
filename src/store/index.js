@@ -3,38 +3,27 @@ import Vuex from 'vuex'
 import {units} from './unitsModule'
 import {materials} from './materialsModule'
 import {village} from './villageModule'
-import {playerTribe} from "./tribeModule";
-import router from "../router";
+import {playerTribe} from './tribeModule';
+import {user} from './userModule';
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
         token: null,
-        isLogged: false,
     },
-    mutations: {
-        loginUser (state) {
-            state.isLogged = true
-            router.push("overview")
-        },
-        logoutUser (state) {
-            state.isLogged = false
-        }
-    },
+    mutations: {},
     actions: {},
     getters: {
         token(state) {
             return state.token
         },
-        isLogged(state) {
-            return state.isLogged
-        }
     },
     modules: {
         units: units,
         materials: materials,
         village: village,
-        tribe: playerTribe
+        tribe: playerTribe,
+        user: user
     }
 })
