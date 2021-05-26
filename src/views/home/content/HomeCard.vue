@@ -51,7 +51,6 @@
         methods: {
             ...mapMutations(["loginUser", "logoutUser"]),
         },
-		computed: {}
     };
 </script>
 
