@@ -12,8 +12,16 @@ export default new Vuex.Store({
     state: {
         token: null,
     },
-    mutations: {},
-    actions: {},
+    mutations: {
+        token (state, token) {
+            state.token = token
+        }
+    },
+    actions: {
+        token (context, token) {
+            context.commit("token", token)
+        }
+    },
     getters: {
         token(state) {
             return state.token

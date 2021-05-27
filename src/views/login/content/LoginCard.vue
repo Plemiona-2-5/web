@@ -25,6 +25,7 @@
 <script>
     import {email, password} from "./validationRules.js";
     import axios from "axios";
+    import {mapActions} from "vuex"
 
     export default {
         data() {
@@ -45,12 +46,17 @@
                 this.$refs.LoginForm.validate((valid) => {
                     if (valid) {
                         axios.post("api/auth/login", {...this.loginForm}).then(
-                            (response) => console.log("gut", response),
+                            (response) => {
+                                this.token(response.data.accessToken)
+                                this.setIsUserPlaying(true)
+                                this.$router.push('overview')
+                            },
                             (error) => this.errors = error.response.data.errors
                         )
                     }
                 });
             },
+            ...mapActions(["token", "setIsUserPlaying"])
         },
     };
 </script>
