@@ -7,6 +7,7 @@ import TribeBrowser from "../views/tribe/content/TribeBrowser";
 import LoginPage from "../views/login/LoginPage";
 import RegisterPage from "../views/Register/Register"
 import HomePage from '../views/home/HomePage';
+import TownHallPage from '../views/townHall/townHallPage'
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: RegisterPage,
+  },
+  {
+    path: '/town-hall',
+    name: 'TownHallPage',
+    component: TownHallPage
   },
 ];
 
