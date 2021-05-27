@@ -2,18 +2,26 @@
 	display: flex;
 	justify-content: center;
 }
-.unit {
+.body {
 	display: flex;
+	flex-direction: column;
+	padding: 5px;
 }
-.unit h3 {
+.names {
+	display: flex;
+	flex-direction: column;
+}
+.names h3 {
 	margin: 5px;
 	padding-bottom: 10px;
 	padding-right: 10px;
+	flex: 0 0 20%;
 }
 .el-image {
 	height: 30px;
-	margin-right: 10px;
+	margin-right: 20px;
 }
-.unit .el-input-number {
-	justify-content: flex-end;
+.unit {
+	margin-top: 15px;
+	margin-right: 20px;
 }
