@@ -13,13 +13,13 @@ export default new Vuex.Store({
         token: null,
     },
     mutations: {
-        token (state, token) {
+        setToken(state, token) {
             state.token = token
         }
     },
     actions: {
-        token (context, token) {
-            context.commit("token", token)
+        setToken({commit}, token) {
+            commit("setToken", token)
         }
     },
     getters: {
