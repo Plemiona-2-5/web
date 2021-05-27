@@ -11,10 +11,6 @@ import HomePage from '../views/home/HomePage';
 
 Vue.use(VueRouter);
 
-const code = {
-  template: '<div>{this.$route.params.code}</div>'
-}
-
 const routes = [
   {
     path: "/",
@@ -54,7 +50,7 @@ const routes = [
   {
     path: "/emailVerification/:code",
     name: "EmailVerificationPage",
-    component: EmailVerification, code,
+    component: EmailVerification,
   },
 ];
 
