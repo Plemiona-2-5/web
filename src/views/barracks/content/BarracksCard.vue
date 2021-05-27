@@ -13,26 +13,29 @@
 				<h3>{{ name }}</h3>
 			</el-row>
 		</el-col>
+		<el-col :span="3">
+			<el-row v-for="(amount, unitName, index) in infantry" :key="unitName">
+				<el-image class="armyImage" :src="infantryImages[index].imageSrc"> </el-image>
+			</el-row>
+			<el-row v-for="(amount, unitName, index) in cavalry" :key="unitName">
+				<el-image class="armyImage" :src="cavalryImages[index].imageSrc"> </el-image>
+			</el-row>
+		</el-col>
 		<el-col :span="6">
 			<el-row>
 				<div class="unit">
-					<el-image :src="pikeman_img"> </el-image>
 					<el-input-number v-model="pikeman" size="small" :min="0"> </el-input-number>
 				</div>
 				<div class="unit">
-					<el-image :src="swordsman_image"> </el-image>
 					<el-input-number v-model="swordsman" size="small" :min="0"> </el-input-number>
 				</div>
 				<div class="unit">
-					<el-image :src="axeman_image"> </el-image>
 					<el-input-number v-model="axeman" size="small" :min="0"> </el-input-number>
 				</div>
 				<div class="unit">
-					<el-image :src="horseman_image"> </el-image>
 					<el-input-number v-model="horseman" size="small" :min="0"> </el-input-number>
 				</div>
 				<div class="unit">
-					<el-image :src="h_horseman_image"> </el-image>
 					<el-input-number v-model="h_horseman" size="small" :min="0"> </el-input-number>
 				</div>
 			</el-row>
@@ -51,12 +54,7 @@
 import { mapGetters } from 'vuex';
 import { units } from '@/store/unitsModule';
 import MaterialsCard from '../../village/content/MaterialsCard.vue';
-
-const pikeman_img = require('@/assets/image/units/pic.png');
-const axeman_image = require('@/assets/image/units/axe.png');
-const swordsman_image = require('@/assets/image/units/sword.png');
-const horseman_image = require('@/assets/image/units/light.png');
-const h_horseman_image = require('@/assets/image/units/heavy.png');
+import unitImages from '../../village/content/units';
 
 export default {
 	name: 'BarracksCard',
@@ -64,11 +62,8 @@ export default {
 	data() {
 		return {
 			units,
-			pikeman_img,
-			axeman_image,
-			swordsman_image,
-			horseman_image,
-			h_horseman_image,
+			infantryImages: unitImages.infantry,
+			cavalryImages: unitImages.cavalry,
 			pikeman: 0,
 			axeman: 0,
 			swordsman: 0,
