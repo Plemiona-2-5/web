@@ -5,6 +5,7 @@ import MapPage from "../views/map/MapPage";
 import TribePage from "../views/tribe/TribePage";
 import TribeBrowser from "../views/tribe/content/TribeBrowser";
 import LoginPage from "../views/login/LoginPage";
+import EmailVerification from "../views/emailVerification/EmailVerification"
 import RegisterPage from "../views/Register/Register"
 import HomePage from '../views/home/HomePage';
 
@@ -45,6 +46,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: RegisterPage,
+  },
+  {
+    path: "/emailVerification/:code",
+    name: "EmailVerificationPage",
+    component: EmailVerification,
   },
 ];
 
