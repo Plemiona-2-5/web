@@ -53,7 +53,7 @@
 </el-row>
 </el-row>
 </el-row>
-<h5> the town hall, you can build or upgrade your buildings</h5>
+<h5> In the town hall, you can build or upgrade your buildings</h5>
 </el-row>
 </el-row>
 
