@@ -6,7 +6,7 @@
                 :model="model"
                 :rules="rules"
                 ref="form"
-                @submit.native.prevent="Register"
+                @submit.native.prevent="register"
         >
             <el-form-item prop="username">
                 <el-input v-model="model.username" placeholder="Username"></el-input>
@@ -48,7 +48,8 @@
 </template>
 
 <script>
-    import {email, username, password, confirmPassword} from './Rules.js'
+    import {email, username, password, confirmPassword} from './Rules.js';
+    import axios from "axios";
 
     export default {
         name: "Register",
@@ -66,10 +67,28 @@
                     password,
                     confirmPassword
                 },
-            };
+            }
         },
-      methods: {
-          
-      }
+        methods: {
+            async register() {
+                let form = this.getForm()
+                await axios.post("api/auth/register", form).then(
+                    (response) => this.$router.push({
+                        name: "EmailVerificationPage",
+                        params: {
+                            code: response.data.emailConfirmationToken,
+                            email: form.email
+                        }
+                    }))
+            },
+            getForm() {
+                return {
+                    "email": this.model.email,
+                    "userName": this.model.username,
+                    "password": this.model.password,
+                    "confirmedPassword": this.model.confirmPassword
+                }
+            }
+        }
     };
 </script>

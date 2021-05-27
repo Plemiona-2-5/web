@@ -2,7 +2,7 @@ import axios from "axios";
 import router from "./router";
 import store from "./store"
 
-axios.defaults.baseURL = "https://localhost:44305"
+axios.defaults.baseURL = "https://localhost:44305/"
 axios.interceptors.response.use(
     response => response,
     error => {
@@ -10,7 +10,7 @@ axios.interceptors.response.use(
             router.push({name: "LoginPage"})
         }
         else if (error.response.status === 404) {
-            router.push({name: "OverviewPage"})
+            router.push({name: "Register"})
         }
         else if (error.response.status === 401 || error.response.status === 403) {
             router.push({name: "LoginPage"})
