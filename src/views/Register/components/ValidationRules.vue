@@ -33,9 +33,8 @@
                 ></el-input>
             </el-form-item>
 
-            <el-alert type="error" v-model="errors" v-for="error in errors" :key="error[0]">
-                <li>{{error[0]}}</li>
-                <li>{{error[1]}}</li>
+            <el-alert type="error" v-model="errors" v-for="errorType in errors" :key="errorType[0]">
+                <li v-for="error in errorType" :key="error">{{error}}</li>
             </el-alert>
 
             <el-form-item>
