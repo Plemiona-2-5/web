@@ -7,7 +7,7 @@
         <el-form-item label="Your registration was successfully completed!">
         </el-form-item>
         <el-form-item label="Now you can play the game!"></el-form-item>
-        <el-button @click="$router.push('login')">Login</el-button>
+        <el-button @click="$router.push('/login')">Login</el-button>
     </el-form>
 </template>
 
@@ -22,7 +22,7 @@
                 email: this.$route.params.email,
                 emailConfirmationToken: this.$route.params.code
             }
-            await axios.post("api/auth/confirm-email", form).then((r)=>console.log("gut", r)).catch((e)=>console.log(e))
+            await axios.post("api/auth/confirm-email", form)
         },
         data() {
             return {

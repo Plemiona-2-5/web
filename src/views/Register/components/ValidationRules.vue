@@ -33,6 +33,11 @@
                 ></el-input>
             </el-form-item>
 
+            <el-alert type="error" v-model="errors" v-for="error in errors" :key="error[0]">
+                <li>{{error[0]}}</li>
+                <li>{{error[1]}}</li>
+            </el-alert>
+
             <el-form-item>
                 <el-button
                         class="register-button"
@@ -67,19 +72,24 @@
                     password,
                     confirmPassword
                 },
+                errors: []
             }
         },
         methods: {
             async register() {
                 let form = this.getForm()
-                await axios.post("api/auth/register", form).then(
-                    (response) => this.$router.push({
+                try {
+                    const response = await axios.post("api/auth/register", form)
+                    await this.$router.push({
                         name: "EmailVerificationPage",
                         params: {
                             code: response.data.emailConfirmationToken,
                             email: form.email
                         }
-                    }))
+                    })
+                } catch (error) {
+                    this.errors = error.response.data.errors
+                }
             },
             getForm() {
                 return {
