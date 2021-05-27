@@ -8,6 +8,7 @@ import LoginPage from "../views/login/LoginPage";
 import EmailVerification from "../views/emailVerification/EmailVerification"
 import RegisterPage from "../views/Register/Register"
 import HomePage from '../views/home/HomePage';
+import BarracksPage from '../views/barracks/BarracksPage';
 
 Vue.use(VueRouter);
 
@@ -52,6 +53,11 @@ const routes = [
     name: "EmailVerificationPage",
     component: EmailVerification,
   },
+  {
+		path: '/barracks',
+		name: 'BarracksPage',
+		component: BarracksPage
+	},
 ];
 
 const router = new VueRouter({
