@@ -9,7 +9,7 @@
                 @submit.native.prevent="register"
         >
             <el-form-item prop="username">
-                <el-input v-model="model.username" placeholder="Username"></el-input>
+                <el-input v-model="model.userName" placeholder="Username"></el-input>
             </el-form-item>
 
             <el-form-item prop="email">
@@ -27,7 +27,7 @@
 
             <el-form-item prop="confirmPassword">
                 <el-input
-                        v-model="model.confirmPassword"
+                        v-model="model.confirmedPassword"
                         placeholder="Confirm Password"
                         type="password"
                 ></el-input>
@@ -60,10 +60,10 @@
         data() {
             return {
                 model: {
-                    username: "",
+                    userName: "",
                     email: "",
                     password: "",
-                    confirmPassword: "",
+                    confirmedPassword: "",
                 },
                 rules: {
                     username,
@@ -76,28 +76,19 @@
         },
         methods: {
             async register() {
-                let form = this.getForm()
                 try {
-                    const response = await axios.post("api/auth/register", form)
+                    const response = await axios.post("api/auth/register", {...this.model})
                     await this.$router.push({
                         name: "EmailVerificationPage",
                         params: {
                             code: response.data.emailConfirmationToken,
-                            email: form.email
+                            email: this.model.email
                         }
                     })
                 } catch (error) {
                     this.errors = error.response.data.errors
                 }
             },
-            getForm() {
-                return {
-                    "email": this.model.email,
-                    "userName": this.model.username,
-                    "password": this.model.password,
-                    "confirmedPassword": this.model.confirmPassword
-                }
-            }
         }
     };
 </script>
