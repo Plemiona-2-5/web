@@ -18,7 +18,7 @@
         },
         methods: {
             async redirectIfTribeless() {
-                if (this.tribe.name === "") {
+                if (!this.tribe.id) {
                     await this.$router.push("/tribe-browser")
                 }
             },

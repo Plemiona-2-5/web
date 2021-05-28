@@ -1,6 +1,7 @@
 export const tribe = {
     state: () => ({
         name: "",
+        id: null,
         description: "",
         numberOfMembers: 0,
         ownerName: ""
@@ -9,6 +10,7 @@ export const tribe = {
         tribe(state) {
             return {
                 name: state.name,
+                id: state.id,
                 description: state.description,
                 membersCount: state.membersCount
             }
@@ -17,6 +19,7 @@ export const tribe = {
     mutations: {
         setTribeInfo(state, data) {
             state.name = data.tribeName
+            state.id = data.id
             state.description = data.description
             state.membersCount = data.numberOfMembers
             state.owner = data.ownerName

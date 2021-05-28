@@ -34,8 +34,7 @@
         async created() {
             await axios.get("tribe-members", {
                 headers: {
-                    // tribeId must be fixed for now since none of the endpoints return it
-                    tribeId: 1
+                    tribeId: this.tribe.id
                 }
             }).then(
                 (response) => this.members = response.data.content
