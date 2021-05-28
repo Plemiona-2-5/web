@@ -15,7 +15,6 @@
         async created() {
             this.setInfo()
             this.redirectIfTribeless()
-
         },
         methods: {
             async redirectIfTribeless() {

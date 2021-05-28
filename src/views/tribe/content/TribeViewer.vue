@@ -6,7 +6,7 @@
                     <h1>{{tribe.name}}</h1>
                     <h4 v-for="member in members" :key="member.nickname">
                         {{member.nickname}} {{member.tribeRole}}
-                        <el-button type="danger" v-if="member.tribeRole !== 'Owner'">X</el-button>
+                        <el-button type="danger">Kick</el-button>
                     </h4>
                 </el-col>
                 <el-col :span="10" id="desc">
@@ -34,6 +34,7 @@
         async created() {
             await axios.get("tribe-members", {
                 headers: {
+                    // tribeId must be fixed for now since none of the endpoints return it
                     tribeId: 1
                 }
             }).then(
