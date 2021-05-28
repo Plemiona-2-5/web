@@ -42,7 +42,7 @@
             )
         },
         computed: {
-            ...mapGetters(["tribe"])
+            ...mapGetters(["tribe", "username"])
         }
     }
 </script>
