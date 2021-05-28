@@ -14,8 +14,8 @@ export const user = {
         }
     },
     actions: {
-        setIsUserPlaying(context, isPlaying) {
-            context.commit("setIsUserPlaying", isPlaying)
+        setIsUserPlaying({commit}, isPlaying) {
+            commit("setIsUserPlaying", isPlaying)
             if (isPlaying === "true") router.push("overview")
         },
         setUserInfo({commit}, data) {
