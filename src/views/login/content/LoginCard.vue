@@ -47,7 +47,6 @@
                     if (valid) {
                         axios.post("api/auth/login", {...this.loginForm}).then(
                             (response) => {
-                                console.log(response.data)
                                 this.setUserInfo(response.data)
                                 this.setIsUserPlaying(true)
                                 this.$router.push('overview')
