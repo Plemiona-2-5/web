@@ -1,16 +1,16 @@
-export const playerTribe = {
+export const tribe = {
     state: () => ({
-        tribeName: "",
+        name: "",
         description: "",
         numberOfMembers: 0,
         ownerName: ""
     }),
     getters: {
-        playerTribe(state) {
+        tribe(state) {
             return {
                 name: state.name,
                 description: state.description,
-                memebersCount: state.memebersCount
+                membersCount: state.membersCount
             }
         }
     },

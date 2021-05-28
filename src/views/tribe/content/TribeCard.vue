@@ -6,24 +6,24 @@
 
 <script>
     import {mapGetters, mapActions} from "vuex";
-    import TribeViewer from "./TribeViewer";
     import axios from "axios";
+    import TribeViewer from "./TribeViewer";
 
     export default {
         name: "TribeCard",
         components: {TribeViewer},
         async created() {
-            this.setTribeInfo()
-            this.redirectIfTribeless()
+            this.setInfo()
+            //this.redirectIfTribeless()
 
         },
         methods: {
             async redirectIfTribeless() {
-                if (this.playerTribe.name === "") {
+                if (this.tribe.name === "") {
                     await this.$router.push("/tribe-browser")
                 }
             },
-            async setTribeInfo() {
+            async setInfo() {
                 await axios.get("tribe-details").then(
                     (response) => this.setTribeInfo(response.data.content)
                 )
@@ -32,7 +32,7 @@
         },
         computed: {
             ...mapGetters([
-                "playerTribe",
+                "tribe",
             ])
         }
     }
