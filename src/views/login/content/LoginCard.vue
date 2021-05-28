@@ -47,7 +47,7 @@
                     if (valid) {
                         axios.post("api/auth/login", {...this.loginForm}).then(
                             (response) => {
-                                this.setToken(response.data.accessToken)
+                                this.setUserInfo(response.data)
                                 this.setIsUserPlaying(true)
                                 this.$router.push('overview')
                             },
@@ -56,7 +56,7 @@
                     }
                 });
             },
-            ...mapActions(["setToken", "setIsUserPlaying"])
+            ...mapActions(["setUserInfo", "setIsUserPlaying"])
         },
     };
 </script>

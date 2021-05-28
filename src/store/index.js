@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import {units} from './unitsModule'
 import {materials} from './materialsModule'
 import {village} from './villageModule'
-import {playerTribe} from './tribeModule';
+import {tribe} from './tribeModule';
 import {user} from './userModule';
 
 Vue.use(Vuex)
@@ -31,7 +31,7 @@ export default new Vuex.Store({
         units: units,
         materials: materials,
         village: village,
-        tribe: playerTribe,
+        tribe: tribe,
         user: user
     }
 })

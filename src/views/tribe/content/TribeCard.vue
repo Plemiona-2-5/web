@@ -1,35 +1,37 @@
 <template>
     <el-row :gutter="24" justify="center">
-        <el-col :span="18" :offset="3">
-            <el-row :gutter="24">
-                <el-col :span="14">
-                    <h1>{{playerTribe.name}}</h1>
-                    <h4>{{playerTribe.points}} points</h4>
-                </el-col>
-                <el-col :span="10" id="desc">
-                    <h3>{{playerTribe.description}}</h3>
-                </el-col>
-            </el-row>
-        </el-col>
-        <el-col>
-            <el-button type="danger">Leave Tribe</el-button>
-        </el-col>
+        <tribe-viewer></tribe-viewer>
     </el-row>
 </template>
 
 <script>
-    import {mapGetters} from "vuex"
+    import {mapGetters, mapActions} from "vuex";
+    import axios from "axios";
+    import TribeViewer from "./TribeViewer";
 
     export default {
         name: "TribeCard",
-        created() {
-            if (this.playerTribe.name === "") {
-                this.$router.push("/tribe-browser")
-            }
+        components: {TribeViewer},
+        async created() {
+            this.setInfo()
+            this.redirectIfTribeless()
+        },
+        methods: {
+            async redirectIfTribeless() {
+                if (!this.tribe.id) {
+                    await this.$router.push("/tribe-browser")
+                }
+            },
+            async setInfo() {
+                await axios.get("tribe-details").then(
+                    (response) => this.setTribeInfo(response.data.content)
+                )
+            },
+            ...mapActions(["setTribeInfo"])
         },
         computed: {
             ...mapGetters([
-                "playerTribe"
+                "tribe",
             ])
         }
     }

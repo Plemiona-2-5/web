@@ -1,18 +1,33 @@
-export const playerTribe = {
+export const tribe = {
     state: () => ({
-        name: "NameOfTheTribe",
-        description: "DescOfTheTribe",
-        points: 50000
+        name: "",
+        id: null,
+        description: "",
+        numberOfMembers: 0,
+        ownerName: ""
     }),
     getters: {
-        playerTribe(state) {
+        tribe(state) {
             return {
                 name: state.name,
+                id: state.id,
                 description: state.description,
-                points: state.points
+                membersCount: state.membersCount
             }
         }
     },
-    mutations: {},
-    actions: {}
+    mutations: {
+        setTribeInfo(state, data) {
+            state.name = data.tribeName
+            state.id = data.id
+            state.description = data.description
+            state.membersCount = data.numberOfMembers
+            state.owner = data.ownerName
+        }
+    },
+    actions: {
+        setTribeInfo({commit}, data) {
+            commit("setTribeInfo", data)
+        }
+    }
 }
