@@ -10,7 +10,7 @@ export const email = [{
     }
 ]
 
-export const username = [{
+export const nickname = [{
         required: true,
         message: "Username is required",
         trigger: "blur",

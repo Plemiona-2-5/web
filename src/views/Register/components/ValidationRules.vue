@@ -8,8 +8,8 @@
                 ref="form"
                 @submit.native.prevent="register"
         >
-            <el-form-item prop="username">
-                <el-input v-model="model.userName" placeholder="Username"></el-input>
+            <el-form-item prop="nickname">
+                <el-input v-model="model.nickname" placeholder="Username"></el-input>
             </el-form-item>
 
             <el-form-item prop="email">
@@ -52,7 +52,7 @@
 </template>
 
 <script>
-    import {email, username, password, confirmPassword} from './Rules.js';
+    import {email, nickname, password, confirmPassword} from './Rules.js';
     import axios from "axios";
 
     export default {
@@ -60,13 +60,13 @@
         data() {
             return {
                 model: {
-                    userName: "",
+                    nickname: "",
                     email: "",
                     password: "",
                     confirmedPassword: "",
                 },
                 rules: {
-                    username,
+                    nickname,
                     email,
                     password,
                     confirmPassword
