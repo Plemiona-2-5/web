@@ -31,8 +31,8 @@
         data() {
             return {
                 loginForm: {
-                    email: "abc@example.com",
-                    password: "Passw0rd!",
+                    email: "",
+                    password: "",
                 },
                 rules: {
                     email,

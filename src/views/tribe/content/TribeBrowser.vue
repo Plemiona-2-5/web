@@ -1,5 +1,9 @@
 <template>
     <el-row justify="center">
+        <el-col>
+            <el-button @click="$router.push('createTribe')">Create tribe</el-button>
+            <hr>
+        </el-col>
         <el-col v-for="i in 10" :key="i">
             <strong>{{tribe.name}}</strong>
             {{tribe.membersCount}} members
@@ -22,7 +26,7 @@
                     points: 12345
                 }
             }
-        }
+        },
     }
 </script>
 

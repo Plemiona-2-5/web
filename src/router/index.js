@@ -9,6 +9,7 @@ import EmailVerification from "../views/emailVerification/EmailVerification"
 import RegisterPage from "../views/Register/Register"
 import HomePage from '../views/home/HomePage';
 import BarracksPage from '../views/barracks/BarracksPage';
+import TribeCreate from "../views/tribe/content/TribeCreate";
 
 Vue.use(VueRouter);
 
@@ -58,6 +59,11 @@ const routes = [
 		name: 'BarracksPage',
 		component: BarracksPage
 	},
+  {
+    path: '/createTribe',
+    name: 'TribeCreate',
+    component: TribeCreate
+  },
 ];
 
 const router = new VueRouter({
