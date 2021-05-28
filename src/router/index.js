@@ -5,14 +5,15 @@ import MapPage from "../views/map/MapPage";
 import TribePage from "../views/tribe/TribePage";
 import TribeBrowser from "../views/tribe/content/TribeBrowser";
 import LoginPage from "../views/login/LoginPage";
+import EmailVerification from "../views/emailVerification/EmailVerification"
 import RegisterPage from "../views/Register/Register"
 import HomePage from '../views/home/HomePage';
 import TownHallPage from '../views/townHall/townHallPage'
+import BarracksPage from '../views/barracks/BarracksPage';
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/overview",
     name: "OverviewPage",
     component: OverviewPage,
@@ -52,6 +53,16 @@ const routes = [
     name: 'TownHallPage',
     component: TownHallPage
   },
+  {
+    path: "/emailVerification/:code",
+    name: "EmailVerificationPage",
+    component: EmailVerification,
+  },
+  {
+		path: '/barracks',
+		name: 'BarracksPage',
+		component: BarracksPage
+	},
 ];
 
 const router = new VueRouter({
