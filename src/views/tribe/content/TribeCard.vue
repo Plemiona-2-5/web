@@ -14,7 +14,7 @@
         components: {TribeViewer},
         async created() {
             this.setInfo()
-            //this.redirectIfTribeless()
+            this.redirectIfTribeless()
 
         },
         methods: {
