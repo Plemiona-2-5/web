@@ -32,13 +32,15 @@
             }
         },
         async created() {
-            await axios.get("tribe-members", {
-                headers: {
-                    tribeId: this.tribe.id
-                }
-            }).then(
-                (response) => this.members = response.data.content
-            )
+            if(this.tribe.id) {
+                await axios.get("tribe-members", {
+                    headers: {
+                        tribeId: this.tribe.id
+                    }
+                }).then(
+                    (response) => this.members = response.data.content
+                )
+            } else {console.log("dis shouldnt be logged")}
         },
         computed: {
             ...mapGetters(["tribe", "username"])

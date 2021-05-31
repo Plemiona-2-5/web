@@ -13,8 +13,8 @@
         name: "TribeCard",
         components: {TribeViewer},
         async created() {
-            this.setInfo()
             this.redirectIfTribeless()
+            this.setInfo()
         },
         methods: {
             async redirectIfTribeless() {
