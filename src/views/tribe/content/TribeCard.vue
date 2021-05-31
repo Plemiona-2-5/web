@@ -12,20 +12,31 @@
     export default {
         name: "TribeCard",
         components: {TribeViewer},
+        data() {
+            return {
+                responseData: null,
+                responseStatus: null
+            }
+        },
         async created() {
-            this.redirectIfTribeless()
-            this.setInfo()
+            if (await this.isInTribe()) {
+                await this.setTribeInfo(this.responseData)
+            } else {
+                await this.$router.push("/tribe-browser")
+            }
         },
         methods: {
-            async redirectIfTribeless() {
-                if (!this.tribe.id) {
-                    await this.$router.push("/tribe-browser")
-                }
+            async isInTribe() {
+                await this.getTribeInfo()
+                return this.responseStatus === 200
             },
-            async setInfo() {
-                await axios.get("tribe-details").then(
-                    (response) => this.setTribeInfo(response.data.content)
-                )
+            async getTribeInfo() {
+                await axios.get("tribe-details")
+                    .then((response) => {
+                        this.responseData = response.data.content
+                        this.responseStatus = response.status
+                    })
+                    .catch((error) => this.responseStatus = error.response.status)
             },
             ...mapActions(["setTribeInfo"])
         },
