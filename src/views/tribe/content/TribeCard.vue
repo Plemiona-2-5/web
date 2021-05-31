@@ -1,17 +1,16 @@
 <template>
     <el-row :gutter="24" justify="center">
-        <tribe-viewer></tribe-viewer>
+
     </el-row>
 </template>
 
 <script>
     import {mapGetters, mapActions} from "vuex";
     import axios from "axios";
-    import TribeViewer from "./TribeViewer";
 
     export default {
         name: "TribeCard",
-        components: {TribeViewer},
+        components: {},
         data() {
             return {
                 responseData: null,
@@ -21,6 +20,7 @@
         async created() {
             if (await this.isInTribe()) {
                 await this.setTribeInfo(this.responseData)
+                await this.$router.push("/tribe-viewer")
             } else {
                 await this.$router.push("/tribe-browser")
             }
