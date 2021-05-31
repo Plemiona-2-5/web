@@ -10,7 +10,6 @@
 
     export default {
         name: "TribeCard",
-        components: {},
         data() {
             return {
                 responseData: null,
