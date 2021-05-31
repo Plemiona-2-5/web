@@ -12,11 +12,11 @@ class Building {
 
 let buildingsRows = {
     firstRow: [
-        new Building("mine", require('@/assets/image/materials/wood.png'),),
+        new Building("mine", require('@/assets/image/materials/wood.png')),
         new Building("farm", require('@/assets/image/materials/wood.png'), 8, 16),
     ],
     secondRow: [
-        new Building("granary", require('@/assets/image/materials/wood.png'),),
+        new Building("granary", require('@/assets/image/materials/wood.png')),
         new Building("town hall", require('@/assets/image/materials/wood.png')),
         new Building("barracks", require('@/assets/image/materials/wood.png')),
     ],
