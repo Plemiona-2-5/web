@@ -1,9 +1,12 @@
+import slugger from "slugger";
+
 class Building {
     constructor(name, imageSrc, span = 8, offset = 0) {
         this.name = name
         this.imageSrc = imageSrc
         this.span = span
         this.offset = offset
+        this.path = slugger(this.name)
     }
 }
 

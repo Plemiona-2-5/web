@@ -15,65 +15,65 @@ import AttackPage from '../views/attack/AttackPage';
 Vue.use(VueRouter);
 
 const routes = [
-	{
-		path: '/overview',
-		name: 'OverviewPage',
-		component: OverviewPage
-	},
-	{
-		path: '/map',
-		name: 'MapPage',
-		component: MapPage
-	},
-	{
-		path: '/login',
-		name: 'LoginPage',
-		component: LoginPage
-	},
-	{
-		path: '/tribe',
-		name: 'TribePage',
-		component: TribePage
-	},
-	{
-		path: '/tribe-browser',
-		name: 'TribeBrowser',
-		component: TribeBrowser
-	},
-	{
-		path: '/',
-		name: 'HomePage',
-		component: HomePage
-	},
-	{
-		path: '/register',
-		name: 'Register',
-		component: RegisterPage
-	},
-	{
-		path: '/emailVerification/:code',
-		name: 'EmailVerificationPage',
-		component: EmailVerification
-	},
-	{
-		path: '/barracks',
-		name: 'BarracksPage',
-		component: BarracksPage
-	},
-  {
-    path: '/createTribe',
-    name: 'TribeCreate',
-    component: TribeCreate
-  },
-	{
-		path: '/attack',
-		name: 'AttackPage',
-		component: AttackPage
-	}
+    {
+        path: '/overview',
+        name: 'OverviewPage',
+        component: OverviewPage
+    },
+    {
+        path: '/map',
+        name: 'MapPage',
+        component: MapPage
+    },
+    {
+        path: '/login',
+        name: 'LoginPage',
+        component: LoginPage
+    },
+    {
+        path: '/tribe',
+        name: 'TribePage',
+        component: TribePage
+    },
+    {
+        path: '/tribe-browser',
+        name: 'TribeBrowser',
+        component: TribeBrowser
+    },
+    {
+        path: '/',
+        name: 'HomePage',
+        component: HomePage
+    },
+    {
+        path: '/register',
+        name: 'Register',
+        component: RegisterPage
+    },
+    {
+        path: '/emailVerification/:code',
+        name: 'EmailVerificationPage',
+        component: EmailVerification
+    },
+    {
+        path: '/barracks',
+        name: 'BarracksPage',
+        component: BarracksPage
+    },
+    {
+        path: '/createTribe',
+        name: 'TribeCreate',
+        component: TribeCreate
+    },
+    {
+        path: '/attack',
+        name: 'AttackPage',
+        component: AttackPage
+    }
 ];
 
 const router = new VueRouter({
-	routes
+    routes
 });
 
 export default router;
