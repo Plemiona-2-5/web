@@ -71,11 +71,11 @@ const routes = [
         name: 'AttackPage',
         component: AttackPage
     },
-	{
-		path: '/tribe-viewer',
-		name: 'TribeViewer',
-		component: TribeViewer
-	},
+    {
+      path: '/tribe-viewer',
+      name: 'TribeViewer',
+      component: TribeViewer
+    },
 ];
 
 const router = new VueRouter({
