@@ -11,6 +11,7 @@ import HomePage from '../views/home/HomePage';
 import BarracksPage from '../views/barracks/BarracksPage';
 import TribeCreate from "../views/tribe/content/TribeCreate";
 import AttackPage from '../views/attack/AttackPage';
+import TribeViewer from "../views/tribe/content/TribeViewer";
 
 Vue.use(VueRouter);
 
@@ -69,7 +70,12 @@ const routes = [
         path: '/attack',
         name: 'AttackPage',
         component: AttackPage
-    }
+    },
+    {
+      path: '/tribe-viewer',
+      name: 'TribeViewer',
+      component: TribeViewer
+    },
 ];
 
 const router = new VueRouter({

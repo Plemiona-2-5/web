@@ -1,31 +1,41 @@
 <template>
     <el-row :gutter="24" justify="center">
-        <tribe-viewer></tribe-viewer>
+
     </el-row>
 </template>
 
 <script>
     import {mapGetters, mapActions} from "vuex";
     import axios from "axios";
-    import TribeViewer from "./TribeViewer";
 
     export default {
         name: "TribeCard",
-        components: {TribeViewer},
+        data() {
+            return {
+                responseData: null,
+                responseStatus: null
+            }
+        },
         async created() {
-            this.setInfo()
-            this.redirectIfTribeless()
+            if (await this.isInTribe()) {
+                await this.setTribeInfo(this.responseData)
+                await this.$router.push("/tribe-viewer")
+            } else {
+                await this.$router.push("/tribe-browser")
+            }
         },
         methods: {
-            async redirectIfTribeless() {
-                if (!this.tribe.id) {
-                    await this.$router.push("/tribe-browser")
-                }
+            async isInTribe() {
+                await this.getTribeInfo()
+                return this.responseStatus === 200
             },
-            async setInfo() {
-                await axios.get("tribe-details").then(
-                    (response) => this.setTribeInfo(response.data.content)
-                )
+            async getTribeInfo() {
+                await axios.get("tribe-details")
+                    .then((response) => {
+                        this.responseData = response.data.content
+                        this.responseStatus = response.status
+                    })
+                    .catch((error) => this.responseStatus = error.response.status)
             },
             ...mapActions(["setTribeInfo"])
         },
